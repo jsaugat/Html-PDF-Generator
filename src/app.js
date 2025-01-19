@@ -4,7 +4,7 @@ import cors from 'cors';
 import pdfRoutes from './routes/pdfRoutes.js';
 
 const app = express();
-const PORT = 8000;
+const PORT = 9000;
 
 // Middleware
 app.use(cors());
