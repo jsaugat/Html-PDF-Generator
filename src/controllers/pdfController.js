@@ -21,17 +21,8 @@ export const generatePDF = async (req, res) => {
       return res.status(400).json({ error: 'HTML content is required' });
     }
 
-    // Launch browser with specific Chrome configuration for Render
-    browser = await puppeteer.launch({
-      headless: 'new',
-      executablePath: process.env.CHROME_BIN || '/usr/bin/google-chrome-stable',
-      args: [
-        '--no-sandbox',
-        '--disable-setuid-sandbox',
-        '--disable-dev-shm-usage',
-        '--disable-gpu'
-      ]
-    });
+    // Launch Puppeteer browser
+    browser = await puppeteer.launch(); // Default settings
     console.log('Browser launched successfully');
 
     const page = await browser.newPage();

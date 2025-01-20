@@ -12,7 +12,7 @@ app.use(express.json({ limit: '50mb' }));
 
 // Routes
 app.get('/', (req, res) => {
-  res.send('Server is running, send a POST request to /pdf/generate-pdf to generate a PDF');
+  res.send('Hello!, send html-content to /pdf/generate-pdf to generate a PDF');
 });
 app.use('/pdf', pdfRoutes);  // Add the PDF route here
 app.use(express.static('public')); // Serve static files from the "public" folder
